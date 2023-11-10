@@ -1,0 +1,147 @@
+* { /*Minden html elemre érvényes lesz*/
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;  /*width értékbe a padding és a border is beletartozik*/
+}
+header,nav,article,aside,footer {
+    border: 1px solid gray;
+    padding: 10px;
+}
+body {
+    width: 90%;
+    max-width: 800px;
+    margin: auto;
+    color: #ca2222;
+    background-image: url('kepek/hatter.jpg');
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+}
+main {
+    display: grid;
+    grid-template-columns: 100px 3fr 1fr;
+    grid-template-rows: 100px 50px auto 50px;
+    grid-template-areas: "h h h" "n n n" "b a j" "f f f";
+    padding: 10px;
+}
+header {
+    grid-area: h;
+}
+nav {
+    grid-area: n;
+}
+nav ul {
+    list-style-type: none;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+}
+nav li {
+    background-color: #ca2222;
+    padding: 6px;
+    text-align: center;
+    border: 2px solid black;
+}
+nav li:hover {
+    background-color: black;
+    border: 2px solid white;
+}
+nav li:hover a {
+    color: red;
+}
+nav a{
+    padding: 0;
+    color: white;
+    text-decoration: none;
+    font-size: 10px;
+}
+article {
+    grid-area: a;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto;
+}
+article img {
+    width: 100%;
+}
+footer {
+    grid-area: f;
+}
+aside#bal {
+    grid-area: b;
+}
+aside#jobb {
+    grid-area: j;
+}
+
+/*aside {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+}*/
+/*aside p {
+    position: absolute;
+}*/
+
+/*töréspont media query-vel*/
+/*Tablet*/
+@media only screen and (max-width: 700px) {
+    body {
+      width: 100%;
+      font-size: 2vw;
+    }
+    main {
+        grid-template-columns: 2fr 1fr;
+        grid-template-rows: 50px auto auto 50px;
+        grid-template-areas: "h h" "n n" "a j" "b b" "f f";
+    }
+
+  }
+@media only screen and (max-width: 650px) {
+    body {
+        width: 100%;
+        font-size: 5vw;
+    }
+    main {
+        grid-template-columns: 1fr;
+        grid-template-rows: 50px auto auto 50px;
+        grid-template-areas: "h" "n" "a" "j" "b" "f";
+    }
+    nav ul {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
